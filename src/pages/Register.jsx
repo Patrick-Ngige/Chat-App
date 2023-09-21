@@ -1,4 +1,5 @@
 import React from 'react'
+import "./style.scss"
 
 const Register = () => {
   return (
@@ -13,7 +14,7 @@ const Register = () => {
             <input type="file" />
             <button>Sign Up</button>
         </form>
-        <p>You do have an account? Login here</p>
+        <p>You do have an account? Login</p>
       </div>
     </div>
   )
