@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles.scss'; 
-import Add from '../img/addAvatar.png';
 
 const Login = () => {
   return (
