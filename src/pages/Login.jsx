@@ -9,17 +9,11 @@ const Login = () => {
         <span className='logo'>Chat App</span>
         <span className='title'>Login</span>
         <form>
-            <input type='text' placeholder='display name'/>
             <input type='email' placeholder='email'/>
             <input type='password' placeholder='password'/>
-            <input style={{display:"none"}} type="file" id='file' />
-            <label htmlFor="file">
-              <img src={Add} alt="Add an avatar" />
-              <span>Add an avatar</span>
-            </label>
-            <button>Sign Up</button>
+            <button>Sign In</button>
         </form>
-        <p>You do have an account? Login</p>
+        <p>You don't have an account? Sign Up</p>
       </div>
     </div>
   )
