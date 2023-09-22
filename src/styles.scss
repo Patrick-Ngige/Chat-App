@@ -13,34 +13,44 @@
         flex-direction: column;
         gap: 10px;
         align-items: center;
-        form{
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
 
-            input{
-                padding: 15px;
-                border: none;
-                width: 250px;
-                border-bottom: 1px solid #a7bcff;
-            &::placeholder{
-                color: rgb(175, 175,175)
+            .logo{
+                color: #5d5b8d;
+                font-weight: bold;
+                font-size: 24px;
             }
+
+            .title{
+              color: 
             }
-            
-            button{
-                background-color: #a7bcff;
-                color:white;
-                padding: 10px;
-                font-weight:bold;
-                cursor: pointer;
-                border: none;
+            form{
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+
+                input{
+                    padding: 15px;
+                    border: none;
+                    width: 250px;
+                    border-bottom: 1px solid #a7bcff;
+                &::placeholder{
+                    color: rgb(175, 175,175)
+                }
+                }
+                
+                button{
+                    background-color: #a7bcff;
+                    color:white;
+                    padding: 10px;
+                    font-weight:bold;
+                    cursor: pointer;
+                    border: none;
+                }
             }
-        }
-        p{
-            color: #5d5b8d;
-            font-size: 12px;
-            margin-top: 10px;
-        }
+            p{
+                color: #5d5b8d;
+                font-size: 12px;
+                margin-top: 10px;
+            }
     }
 }
