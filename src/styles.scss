@@ -134,6 +134,10 @@
                         border: none;
                         color: white;
                         outline: none;
+
+                        &::placeholder{
+                            color: lightgray;
+                        }
                     }
             }
 
