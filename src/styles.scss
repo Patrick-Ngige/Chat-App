@@ -119,6 +119,31 @@
                     border: none;
                     cursor: pointer;
                 }
+
+            }
+
+            .search{
+                border-bottom: 1px solid gray;
+
+                .searchForm{
+                    padding: 10px;
+                }
+                
+                    input{
+                        background-color: transparent;
+                        border: none;
+                        color: white;
+                        outline: none;
+                    }
+            }
+
+            .userChat{
+                img{
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    object-fit: cove;
+                }
             }
         }
         .chat{flex: 2;}

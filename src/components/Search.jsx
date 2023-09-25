@@ -4,7 +4,7 @@ const Search = () => {
   return (
     <div className='search'>
       <div className="searchForm">
-        <input type="text" />
+        <input type="text" placeholder='find a user'/>
       </div>
       <div className="userChat">
         <img src="https://cdn.pixabay.com/photo/2023/08/02/02/46/woman-8164186_1280.jpg" alt="" />
