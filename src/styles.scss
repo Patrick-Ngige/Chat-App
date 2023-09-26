@@ -199,6 +199,26 @@
                 background-color: #ddddf7;
                 padding: 10px;
                 height: calc(100% - 160px);
+
+                .message{
+                    display: flex;
+                    gap: 20px;
+
+                    .messageInfo{
+                        img{
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    .messageContent{
+                        img{
+                            width: 50%;
+                        }
+                    }
+                }
             }
 
             .input{
