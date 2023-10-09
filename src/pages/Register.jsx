@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../styles.scss'; 
 import Add from '../img/addAvatar.png';
 import { createUserWithEmailAndPaasword, updateProfile} from 'firebase/auth';
-import {auth, storage} from '../firebase'
+import {auth, storage, db} from '../firebase'
 import {
   ref,
   uploadBytesResumable,
@@ -35,10 +35,16 @@ const Register = () => {
             displayName,
             photoURL:downloadURL,
           })
+          await setDoc(doc(db, "users", res.user.uid), {
+            displayName,
+            email,
+            photoURL:downloadURL
+          });
         });
       }
     );
   
+
   }catch (err) {
       setErr(true);
     }
