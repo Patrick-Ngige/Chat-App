@@ -12,6 +12,7 @@ import {doc, setDoc} from "firebase/firestore";
 
 const Register = () => {
   const [err, setErr] = useState('false');
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     const displayName = e.target[0].value;
