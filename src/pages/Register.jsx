@@ -11,7 +11,7 @@ import {
 import {doc, setDoc} from "firebase/firestore";
 
 const Register = () => {
-  const [err, setErr] = useState(falses);
+  const [err, setErr] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
