@@ -11,8 +11,8 @@ import {
 import {doc, setDoc} from "firebase/firestore";
 
 const Register = () => {
-  const [err, setErr] = useState('false');
-  
+  const [err, setErr] = useState(falses);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const displayName = e.target[0].value;
@@ -67,6 +67,7 @@ const Register = () => {
               <span>Add an avatar</span>
             </label>
             <button>Sign Up</button>
+            {err && <span>Something went wrong.s</span>}
         </form>
         <p>You do have an account? Login</p>
       </div>
