@@ -12,5 +12,8 @@ export const AuthContextProvider = ({children}) => {
         onAuthStateChanged(auth, (user) => {
             setCurrentUser(user)
         })
-    })
+    }, []);
+    <AuthContext.Provider value={{currentUser}}>
+        {children}
+    </AuthContext.Provider>
 }
