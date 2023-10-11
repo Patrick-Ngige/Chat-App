@@ -10,11 +10,14 @@ import {
 
 function App() {
   return (
-    <>
-    {/* <Home/> */}
+    <BrowserRouter>
+    <Routes>
+      <Route path="/">
+        <Route index element={<Home />} />
+      </Route>
+    </Routes>
     <Register/>
-    {/* <Login /> */}
-    </>
+    </BrowserRouter>
   );
 }
 
