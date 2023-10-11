@@ -38,6 +38,9 @@ const Register = () => {
               email,
               photoURL: downloadURL,
             });
+
+            await setDoc(doc(db, "userCharts", res.user.uid), {});
+
           });
         }
       );
