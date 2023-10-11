@@ -23,7 +23,6 @@ function App() {
         <Route path="register" element={<Register />} />
       </Route>
     </Routes>
-    <Register/>
     </BrowserRouter>
   );
 }
