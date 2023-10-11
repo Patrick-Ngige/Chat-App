@@ -42,6 +42,7 @@ const Register = () => {
             });
 
             await setDoc(doc(db, "userCharts", res.user.uid), {});
+            navigate("/");
 
           });
         }
