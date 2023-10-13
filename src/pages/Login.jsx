@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles.scss'; 
+import { useNavigate } from 'react-router-dom';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../firebase';
+
 
 const Login = () => {
 
@@ -13,7 +17,8 @@ const Login = () => {
    
 
     try {
-      
+      await signInWithEmailAndPassword(auth, email, password);
+      navigate("/login")
     } catch (err) {
       setErr(true);
     }
