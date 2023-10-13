@@ -7,6 +7,7 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
 import { Link, useNavigate } from "react-router-dom";
 
+
 const Register = () => {
   const [err, setErr] = useState(false);
   const navigate = useNavigate()
@@ -17,9 +18,11 @@ const Register = () => {
     const email = e.target[1].value;
     const password = e.target[2].value;
     const file = e.target[3].files[0];
+   
 
     try {
-      const res = await createUserWithEmailAndPassword(auth, email, password);
+      const res = await createUserWithEmailAndPassword(auth, email, password)
+      
       const storageRef = ref(storage, displayName);
 
       const uploadTask = uploadBytesResumable(storageRef, file);
@@ -29,8 +32,8 @@ const Register = () => {
           setErr(true);
         },
         () => {
-          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
-            await updateProfile(res.user, {
+          getDownloadURL(uploadTask.snapshot.ref).then( async(downloadURL) => {
+            await updateProfile(res.user,{
               displayName,
               photoURL: downloadURL,
             });
