@@ -18,22 +18,37 @@ const Register = () => {
     const email = e.target[1].value;
     const password = e.target[2].value;
     const file = e.target[3].files[0];
-
-
+  
+    // Client-side validation
+    if (!displayName || !email || !password || !file) {
+      setErr('All fields are required.');
+      return;
+    }
+  
+    if (!email) {
+      setErr('Invalid email address.');
+      return;
+    }
+  
+    if (password.length < 6) {
+      setErr('Password must be at least 6 characters long.');
+      return;
+    }
+  
     try {
-      const res = await createUserWithEmailAndPassword(auth, email, password)
-      
+      const res = await createUserWithEmailAndPassword(auth, email, password);
+  
       const storageRef = ref(storage, displayName);
-
+  
       const uploadTask = uploadBytesResumable(storageRef, file);
-
+  
       uploadTask.on(
         (error) => {
-          setErr(true);
+          setErr(`Error uploading avatar: ${error.message}`);
         },
         () => {
-          getDownloadURL(uploadTask.snapshot.ref).then( async(downloadURL) => {
-            await updateProfile(res.user,{
+          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+            await updateProfile(res.user, {
               displayName,
               photoURL: downloadURL,
             });
@@ -43,17 +58,17 @@ const Register = () => {
               email,
               photoURL: downloadURL,
             });
-
+  
             await setDoc(doc(db, "userCharts", res.user.uid), {});
             navigate("/");
-
           });
         }
       );
-    } catch (err) {
-      setErr(true);
+    } catch (error) {
+      setErr(`Registration failed: ${error.message}`);
     }
   };
+  
   return (
     <div className="formContainer">
       <div className="formWrapper">
@@ -69,7 +84,7 @@ const Register = () => {
             <span>Add an avatar</span>
           </label>
           <button>Sign Up</button>
-          {err && <span>Something went wrong</span>}
+          {err && <p className="error">{err}</p>}
         </form>
         <p>You do have an account? <Link to="/Login">Login</Link> </p>
       </div>
