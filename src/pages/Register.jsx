@@ -30,7 +30,7 @@ const Register = () => {
       return;
     }
   
-    if (password.length < 6) {
+    if (password.length < 4) {
       setErr('Password must be at least 6 characters long.');
       return;
     }
@@ -39,6 +39,7 @@ const Register = () => {
       const res = await createUserWithEmailAndPassword(auth, email, password);
   
       const storageRef = ref(storage, displayName);
+
   
       const uploadTask = uploadBytesResumable(storageRef, file);
   
@@ -58,9 +59,8 @@ const Register = () => {
               email,
               photoURL: downloadURL,
             });
-            console.log(displayName)
   
-            await setDoc(doc(db, "userCharts", res.user.uid), {});
+            await setDoc(doc(db, "userChats", res.user.uid), {});
             navigate("/");
           });
         }
@@ -74,7 +74,7 @@ const Register = () => {
     <div className="formContainer">
       <div className="formWrapper">
         <span className="logo">Chat App</span>
-        <span className="title">Register</span>
+        <h1 className="title">Register</h1>
         <form onSubmit={handleSubmit}>
           <input type="text" placeholder="display name" />
           <input type="email" placeholder="email" />
