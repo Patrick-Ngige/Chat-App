@@ -58,6 +58,7 @@ const Register = () => {
               email,
               photoURL: downloadURL,
             });
+            console.log(displayName)
   
             await setDoc(doc(db, "userCharts", res.user.uid), {});
             navigate("/");
