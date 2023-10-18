@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { db } from '../firebase';
-import { collection, doc, getDocs, query, setDoc, where } from 'firebase/firestore';
+import { collection, doc, getDocs, query, serverTimestamp, setDoc, updateDoc, where } from 'firebase/firestore';
 import {AuthContext} from '../context/AuthContext'
 
 const Search = () => {
@@ -39,8 +39,18 @@ const Search = () => {
 
       if(!res.exists()){
         //create a chat in chats collection
-        await setDoc(doc,(db, "chats", combinedId), { messages: []})
+        await setDoc(doc(db, "chats", combinedId), { messages: []})
       }
+      //create user chats
+      await updateDoc(doc(db, "userChats", currentUser.uid), {
+        [combinedId+".userInfo"]: {
+          uid:user.uid,
+          displayName: user.displayName,
+          photoURL: user.photoURL
+        },
+        [combinedId+".date"]: serverTimestamp()
+      })
+      
     }catch (err) {
 
     }
