@@ -30,8 +30,8 @@ const Chats = () => {
         <div className="userChat" key={chat[0]}>
         <img src="https://cdn.pixabay.com/photo/2023/08/02/02/46/woman-8164186_1280.jpg" alt="" />
         <div className="userChatInfo">
-          <span>Jane</span>
-          <p>Hello there</p>
+          <span>{chat[1].displayName}</span>
+          <p>{chat[1].lastMessage?.text}</p>
         </div>
       </div>
       ))}
