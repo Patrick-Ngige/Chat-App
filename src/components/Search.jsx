@@ -50,6 +50,15 @@ const Search = () => {
         },
         [combinedId+".date"]: serverTimestamp()
       })
+
+      await updateDoc(doc(db, "userChats", user.uid), {
+        [combinedId+".userInfo"]: {
+          uid:currentUser.uid,
+          displayName: currentUser.displayName,
+          photoURL: currentUser.photoURL
+        },
+        [combinedId+".date"]: serverTimestamp()
+      })
       
     }catch (err) {
 
