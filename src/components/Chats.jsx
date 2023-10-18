@@ -1,40 +1,40 @@
-import { doc, onSnapshot } from 'firebase/firestore';
+// import { doc, onSnapshot } from 'firebase/firestore';
 import React, { useContext, useEffect, useState } from 'react'
 import { db } from '../firebase';
-import { AuthContext } from '../context/AuthContext';
+// import { AuthContext } from '../context/AuthContext';
 
 const Chats = () => {
 
-  const [chats,setChats] = useState([]);
+  // const [chats,setChats] = useState([]);
 
-  const [currentUser] = useContext(AuthContext);
+  // const [currentUser] = useContext(AuthContext);
 
-  useEffect(() => {
-    const getChats = () => {
-      const unsub = onSnapshot(doc(db, "userChats", currentUser.uid), (doc) => {
-        setChats(doc.data());
-      })
+  // useEffect(() => {
+  //   const getChats = () => {
+  //     const unsub = onSnapshot(doc(db, "userChats", currentUser.uid), (doc) => {
+  //       setChats(doc.data());
+  //     })
   
-      return () => {
-        unsub();
-      }
-    }
+  //     return () => {
+  //       unsub();
+  //     }
+  //   }
 
-    currentUser.uid && getChats();
-  }, [currentUser.uid])
+  //   currentUser.uid && getChats();
+  // }, [currentUser.uid])
 
-  console.log(chats)
+  // console.log(chats)
   return (
     <div className='chats'>
-      {Object.entries(chats)?.map((chat) => (
-        <div className="userChat" key={chat[0]}>
-        <img src={chat[1].userInfo.photoURL} alt="" />
+      {/* {Object.entries(chats)?.map((chat) => ( */}
+        <div className="userChat" >
+        <img src="https://images.unsplash.com/photo-1697059492638-ea45a2493ec4?auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMnx8fGVufDB8fHx8fA%3D%3D&w=600" alt="" />
         <div className="userChatInfo">
-          <span>{chat[1].userInfo.displayName}</span>
-          <p>{chat[1].userInfo.lastMessage?.text}</p>
+          <span>Jane</span>
+          <p>Hello</p>
         </div>
       </div>
-      ))}
+      {/* ))} */}
     </div>
   )
 }

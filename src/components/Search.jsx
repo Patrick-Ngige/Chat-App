@@ -54,7 +54,7 @@ const Search = () => {
         await setDoc(doc(db, "chats", combinedId), { messages: [] });
       }
       //create user chats
-      await updateDoc(doc(db, "userChats", currentUser.uid), {
+     await updateDoc(doc(db, "userChats", currentUser.uid), {
         [combinedId + ".userInfo"]: {
           uid: user.uid,
           displayName: user.displayName,
@@ -62,6 +62,7 @@ const Search = () => {
         },
         [combinedId + ".date"]: serverTimestamp(),
       });
+      console.log( [combinedId + ".date"])
 
       await updateDoc(doc(db, "userChats", user.uid), {
         [combinedId + ".userInfo"]: {
