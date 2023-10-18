@@ -27,7 +27,7 @@ const Chats = () => {
   return (
     <div className='chats'>
       {Object.entries(chats)?.map((chat) => (
-        <div className="userChat">
+        <div className="userChat" key={chat[0]}>
         <img src="https://cdn.pixabay.com/photo/2023/08/02/02/46/woman-8164186_1280.jpg" alt="" />
         <div className="userChatInfo">
           <span>Jane</span>
