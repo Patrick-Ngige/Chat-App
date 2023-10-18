@@ -19,6 +19,8 @@ const Chats = () => {
         unsub();
       }
     }
+
+    currentUser.uid && getChats();
   }, [currentUser.uid])
 
   console.log(chats)
