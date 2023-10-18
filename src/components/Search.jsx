@@ -35,7 +35,7 @@ const Search = () => {
     //check whether the chats in firestore exists, if no, create 
     const combinedId = currentUser.uid > user.uid ? currentUser.uid + user.uid : user.uid + currentUser.uid
     try {
-      const res = await getDocs(db, "chats", combinedId);
+      const res = await getDocs(doc(db, "chats", combinedId));
 
       if(!res.exists()){
         //create a chat in chats collection
