@@ -71,7 +71,7 @@ body{
                     display: flex;
                     align-items: center;
                     gap: 10px;
-                    color: #8da4f1;
+                    color: #266E8F;
                     font-size: 12px;
                     cursor: pointer;
 
@@ -81,7 +81,7 @@ body{
                 }
             }
             p{
-                color: #5d5b8d;
+                color: #a1d6ee;
                 font-size: 12px;
                 margin-top: 10px;
             }
@@ -114,11 +114,11 @@ body{
             .navbar{
                 display: flex;
                 align-items: center;
-                background-color: #023043;
+                background-color: #0e5776;
                 height: 50px;
                 padding: 10px;
                 justify-content: space-between;
-                color: #ddddf7;
+                color: #fff;
 
                 .logo{
                     font-weight: bold;
@@ -131,7 +131,7 @@ body{
                     gap: 10px;
                 }
                 img{
-                    background-color: #ddddf7;
+                    background-color: #fff;
                     height: 24px;
                     width: 24px;
                     border-radius: 50%;
@@ -139,10 +139,12 @@ body{
                 }
 
                 button{
-                    background-color: #266E8F;
-                    color: #ddddf7;
+                    background-color: #184356;
+                    color: #fff;
                     font-size: 10px;
+                    padding: 5px;
                     border: none;
+                    border-radius: 3px;
                     cursor: pointer;
                     @include tablet{
                         position: absolute;
@@ -180,7 +182,7 @@ body{
                 cursor: pointer;
 
                 &:hover{
-                    background-color: #023142;
+                    background-color: #0e5776;
                 }
 
                 img{
