@@ -132,8 +132,8 @@ body{
                 }
                 img{
                     background-color: #fff;
-                    height: 24px;
-                    width: 24px;
+                    height: 26px;
+                    width: 26px;
                     border-radius: 50%;
                     object-fit: cover;
                 }
@@ -149,6 +149,10 @@ body{
                     @include tablet{
                         position: absolute;
                         bottom: 10px;
+
+                        &:hover{
+                            background-color: #c42121;
+                        }    
                     }
                 }
 
