@@ -89,8 +89,8 @@ body{
 }
 
 .home{
-    background-color: #a7bcff;
-    height: 100vh;
+    // background-color: #EAEBEB;
+    height: 97vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -98,8 +98,8 @@ body{
     .container{
         border: 1px solid white;
         border-radius: 10px;
-        width: 65%;
-        height: 80%;
+        width: 75%;
+        height: 90%;
         display: flex;
         overflow: hidden;
         @include tablet{
