@@ -34,13 +34,13 @@ body{
         align-items: center;
 
             .logo{
-                color: #5d5b8d;
+                color: #266E8F;
                 font-weight: bold;
                 font-size: 24px;
             }
 
             .title{
-              color: #5d5b8d;
+              color: #266E8F;
               font-size: 12px;
             }
             form{
@@ -52,14 +52,14 @@ body{
                     padding: 15px;
                     border: none;
                     width: 250px;
-                    border-bottom: 1px solid #a7bcff;
+                    border-bottom: 1px solid #266E8F;
                 &::placeholder{
                     color: rgb(175, 175,175)
                 }
                 }
                 
                 button{
-                    background-color: #a7bcff;
+                    background-color: #266E8F;
                     color:white;
                     padding: 10px;
                     font-weight:bold;
