@@ -230,8 +230,8 @@ body{
             .messages{
                 background-color: #e0eaf5;
                 padding: 10px;
-                height: calc(100% - 160px);
-                overflow: scroll;
+                height: calc(100% - 155px);
+                overflow-y: scroll;
 
                 .message{
                     display: flex;
